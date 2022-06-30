@@ -12,17 +12,13 @@ Coming Soon...Backend implemetation of a job board application.
 ![]()
 
 ## Technologies
-* HTML5
-* CSS3
-* JavaScript
-* Tailwind
-* Python3
-* Flask
+* NodeJS
+* Express
 * Bcrypt
-* PostgreSQL
-* SQLalchemy
-* Jinja2
-* WTForms
+* JWT
+* PoastgreSQL
+* Supertest
+
 	
 ## Setup
 Coming Soon...
