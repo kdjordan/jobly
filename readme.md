@@ -9,3 +9,34 @@ To run this:
 To run the tests:
 
     jest -i
+
+
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Testing](#testing)
+
+## General info
+Coming Soon...
+
+![]()
+
+## Technologies
+* HTML5
+* CSS3
+* JavaScript
+* Tailwind
+* Python3
+* Flask
+* Bcrypt
+* PostgreSQL
+* SQLalchemy
+* Jinja2
+* WTForms
+	
+## Setup
+Coming Soon...
+
+## Testing  
+Coming Soon...
