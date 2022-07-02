@@ -1,3 +1,4 @@
+const { DataRowMessage } = require("pg-protocol/dist/messages");
 const { BadRequestError } = require("../expressError");
 
 /****************************************************************** 
@@ -12,7 +13,7 @@ const { BadRequestError } = require("../expressError");
 
 function sqlForPartialUpdate(dataToUpdate, jsToSql) {
   const keys = Object.keys(dataToUpdate);
-  // if our OBject contains no data then throw an error
+  // if our Object contains no data then throw an error
   if (keys.length === 0) throw new BadRequestError("No data");
 
   // {firstName: 'Aliya', age: 32} => ['"first_name"=$1', '"age"=$2']
@@ -26,4 +27,34 @@ function sqlForPartialUpdate(dataToUpdate, jsToSql) {
   };
 }
 
-module.exports = { sqlForPartialUpdate };
+function generateSearchQuery(data) {
+  let search
+  if(data.name !== undefined) {
+    search = `WHERE name ILIKE '%${data.name}%'`
+  } 
+  
+  if(data.minEmployees && data.maxEmployees) {
+      //confirm our range will work for search
+    if(data.minEmployees > data.maxEmployees || data.minEmployees === data.maxEmployees) {
+      throw new BadRequestError("Error with range of Min and Max employees : INVALID !")
+    } 
+    search = `${search} AND num_employees > ${data.minEmployees} AND num_employees < ${data.maxEmployees}` 
+  } else if(data.minEmployees) {
+      search = `${search} AND num_employees > ${data.minEmployees}` 
+  } else if(data.maxEmployees) {
+      search = `${search} AND num_employees < ${data.maxEmployees}`
+  }
+  
+  let query =  `SELECT handle,
+                name,
+                description,
+                num_employees AS "numEmployees",
+                logo_url AS "logoUrl"
+              FROM companies 
+              ${search}`
+
+  return query    
+
+}
+
+module.exports = { sqlForPartialUpdate, generateSearchQuery };

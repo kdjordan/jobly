@@ -35,15 +35,11 @@ beforeEach(() => {
     }
 
     noData = {}
+
     partialUserData = {
         firstName: 'NewFirst',
         isAdmin: false
     }
-    fullCompanyData = {
-        numEmployees: '666',
-        logoUrl: 'httl://newlogo.com'
-    }
-
 })
 
 afterEach(() => {
@@ -55,6 +51,7 @@ describe("test no user data", function () {
         expect(() => {sqlForPartialUpdate(noData, updateSchema) }).toThrow(BadRequestError);
     })
 })
+
 describe("test good update", function () {
     test("Success", async function () {
         const { setCols, values } = sqlForPartialUpdate(partialUserData, updateSchema)

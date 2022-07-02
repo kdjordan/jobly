@@ -2,7 +2,7 @@
 
 const db = require("../db");
 const { BadRequestError, NotFoundError } = require("../expressError");
-const { sqlForPartialUpdate } = require("../helpers/sql");
+const { sqlForPartialUpdate, generateSearchQuery } = require("../helpers/sql");
 
 /** Related functions for companies. */
 
@@ -139,6 +139,20 @@ class Company {
     const company = result.rows[0];
 
     if (!company) throw new NotFoundError(`No company: ${handle}`);
+  }
+
+  /** Find companies based on one or more of the following criteria :
+   *  1. Name like...
+   *  2. Min # employees
+   *  3. Max # emplyees
+   *  4. Range of # employees - both Min and Max
+   **/
+
+  static async filteredSearch(data) {
+    let query = generateSearchQuery(data)
+    let result = await db.query(query)
+   
+    return result.rows;  
   }
 }
 

@@ -52,8 +52,15 @@ router.post("/", ensureLoggedIn, async function (req, res, next) {
 
 router.get("/", async function (req, res, next) {
   try {
-    const companies = await Company.findAll();
-    return res.json({ companies });
+    //if we have detected some filters - pass to filteredSearch
+    if(Object.keys(req.query).length > 0) {
+      const companies = await Company.filteredSearch(req.query);
+      return res.json({ companies });
+    //if no filters present - return all companies
+    } else {
+      const companies = await Company.findAll();
+      return res.json({ companies });
+    }
   } catch (err) {
     return next(err);
   }
