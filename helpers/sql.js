@@ -47,6 +47,7 @@ function generateSearchQuery(data) {
   }
 
   if('maxEmployees' in data && 'minEmployees' in data) {
+    //quick check to make sure our range supplied is valid
     if(data.minEmployees > data.maxEmployees || data.minEmployees === data.maxEmployees) {
       throw new BadRequestError("Error in range for Min and Max Employees")
     }
