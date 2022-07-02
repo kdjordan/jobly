@@ -31,9 +31,13 @@ function generateSearchQuery(data) {
   //check to see if 'name' is present as it will change the structure of our query
   console.log('going in with ', data)
   // we have 2 basic types of queries : (1) 'name' in query and (2) no 'name' in query
+  //searchString will bee added into the base query using string interpolation for return (line 58) 
   let searchString
+  //nameSearchString is prepended to the query if query has 'name' (type (1) query)
   let nameSearchString
+  //clause will be WITH or AND depending upon if query has 'name' (type(1) query)
   let clause
+  //figure out if we have (1) :: set up our query 'framework'
   if('name' in data) {
     nameSearchString = `WHERE name ILIKE '%${data.name}%'`
     clause = 'AND'
