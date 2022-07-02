@@ -29,20 +29,27 @@ function sqlForPartialUpdate(dataToUpdate, jsToSql) {
 
 function generateSearchQuery(data) {
   let search
+  let clause
+  
   if(data.name !== undefined) {
     search = `WHERE name ILIKE '%${data.name}%'`
-  } 
+    clause = 'AND'
+  } else {
+    search = ''
+    clause = 'WHERE'
+  }
   
   if(data.minEmployees && data.maxEmployees) {
+    console.log('checking search ', search)
       //confirm our range will work for search
     if(data.minEmployees > data.maxEmployees || data.minEmployees === data.maxEmployees) {
       throw new BadRequestError("Error with range of Min and Max employees : INVALID !")
     } 
-    search = `${search} AND num_employees > ${data.minEmployees} AND num_employees < ${data.maxEmployees}` 
+    search = `${search} ${clause} num_employees > ${data.minEmployees} AND num_employees < ${data.maxEmployees}` 
   } else if(data.minEmployees) {
-      search = `${search} AND num_employees > ${data.minEmployees}` 
+      search = `${search} ${clause} num_employees > ${data.minEmployees}` 
   } else if(data.maxEmployees) {
-      search = `${search} AND num_employees < ${data.maxEmployees}`
+      search = `${search} ${clause} num_employees < ${data.maxEmployees}`
   }
   
   let query =  `SELECT handle,
@@ -52,6 +59,7 @@ function generateSearchQuery(data) {
                 logo_url AS "logoUrl"
               FROM companies 
               ${search}`
+  console.log('query ', query)
 
   return query    
 

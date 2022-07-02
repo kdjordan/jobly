@@ -16,14 +16,6 @@ beforeEach(commonBeforeEach);
 afterEach(commonAfterEach);
 afterAll(commonAfterAll);
 
-// await User.register({
-//     username: "u1",
-//     firstName: "U1F",
-//     lastName: "U1L",
-//     email: "user1@user.com",
-//     password: "password1",
-//     isAdmin: false,
-//   });
 
 let updateSchema, noData, partialUserData, fullCompanyData
 
