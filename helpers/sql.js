@@ -47,6 +47,9 @@ function generateSearchQuery(data) {
   }
 
   if('maxEmployees' in data && 'minEmployees' in data) {
+    if(data.minEmployees > data.maxEmployees || data.minEmployees === data.maxEmployees) {
+      throw new BadRequestError("Error in range for Min and Max Employees")
+    }
     searchString = `${nameSearchString} ${clause} num_employees > ${data.minEmployees} AND num_employees < ${data.maxEmployees}`
   }
   else if('maxEmployees' in data) {

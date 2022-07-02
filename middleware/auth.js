@@ -34,7 +34,6 @@ function authenticateJWT(req, res, next) {
  */
 
 function ensureLoggedIn(req, res, next) {
-  console.log('checking login', res.locals)
   try {
     if (!res.locals.user) throw new UnauthorizedError();
     return next();
@@ -42,6 +41,11 @@ function ensureLoggedIn(req, res, next) {
     return next(err);
   }
 }
+
+/** Middleware to use when they must be Admin.
+ *
+ * If not, raises Unauthorized.
+ */
 
 function isAdmin(req, res, next) {
   try {
