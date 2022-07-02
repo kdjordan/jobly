@@ -28,41 +28,50 @@ function sqlForPartialUpdate(dataToUpdate, jsToSql) {
 }
 
 function generateSearchQuery(data) {
-  let search
+  //check to see if 'name' is present as it will change the structure of our query
+  console.log('going in with ', data)
+  // we have 2 basic types of queries : (1) 'name' in query and (2) no 'name' in query
+  let searchString
+  let nameSearchString
   let clause
-  
-  if(data.name !== undefined) {
-    search = `WHERE name ILIKE '%${data.name}%'`
+  if('name' in data) {
+    nameSearchString = `WHERE name ILIKE '%${data.name}%'`
     clause = 'AND'
   } else {
-    search = ''
+    nameSearchString = ''
     clause = 'WHERE'
   }
-  
-  if(data.minEmployees && data.maxEmployees) {
-    console.log('checking search ', search)
-      //confirm our range will work for search
-    if(data.minEmployees > data.maxEmployees || data.minEmployees === data.maxEmployees) {
-      throw new BadRequestError("Error with range of Min and Max employees : INVALID !")
-    } 
-    search = `${search} ${clause} num_employees > ${data.minEmployees} AND num_employees < ${data.maxEmployees}` 
-  } else if(data.minEmployees) {
-      search = `${search} ${clause} num_employees > ${data.minEmployees}` 
-  } else if(data.maxEmployees) {
-      search = `${search} ${clause} num_employees < ${data.maxEmployees}`
+
+  if('maxEmployees' in data && 'minEmployees' in data) {
+    searchString = `${nameSearchString} ${clause} num_employees > ${data.minEmployees} AND num_employees < ${data.maxEmployees}`
   }
-  
-  let query =  `SELECT handle,
+  else if('maxEmployees' in data) {
+    searchString = `${nameSearchString} ${clause} num_employees < ${data.maxEmployees}`
+  }
+  else if('minEmployees' in data) {
+    searchString = `${nameSearchString} ${clause} num_employees > ${data.minEmployees}`
+  } else {
+    searchString = nameSearchString
+  }
+  return `SELECT handle,
                 name,
                 description,
                 num_employees AS "numEmployees",
                 logo_url AS "logoUrl"
-              FROM companies 
-              ${search}`
-  console.log('query ', query)
-
-  return query    
-
+             FROM companies 
+             ${searchString}`
 }
 
-module.exports = { sqlForPartialUpdate, generateSearchQuery };
+function filterSearchParams(params) {
+  //make sure our filter params are what we expect, remove any bad search params
+  let goodFilters = ['name', 'minEmployees', 'maxEmployees']
+  let resultsObj = {}
+  Object.entries(params).filter(el => {  
+    if(goodFilters.indexOf(el[0]) !== -1) {
+      resultsObj[`${el[0]}`] = el[1]
+    } 
+  })
+  return resultsObj
+}
+
+module.exports = { sqlForPartialUpdate, generateSearchQuery, filterSearchParams };

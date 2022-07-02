@@ -2,7 +2,7 @@
 
 const db = require("../db");
 const { BadRequestError, NotFoundError } = require("../expressError");
-const { sqlForPartialUpdate, generateSearchQuery } = require("../helpers/sql");
+const { sqlForPartialUpdate, generateSearchQuery, filterSearchParams } = require("../helpers/sql");
 
 /** Related functions for companies. */
 
@@ -149,10 +149,19 @@ class Company {
    **/
 
   static async filteredSearch(data) {
-    let query = generateSearchQuery(data)
-    let result = await db.query(query)
+    //first remove any bad search params if they exist
+    //returns array of good filter names and values
+    let searchParams = filterSearchParams(data)
+    if(Object.keys(searchParams).length > 0) {
+      let query = generateSearchQuery(searchParams)
+      if(query) {
+        let result = await db.query(query)
+        return result.rows;  
+      }
+    } else {
+      throw new NotFoundError(`Insufficient search query parameters !`)
+    }
    
-    return result.rows;  
   }
 }
 
