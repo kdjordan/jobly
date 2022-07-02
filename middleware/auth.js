@@ -62,7 +62,7 @@ function isAuthUser(req, res, next) {
     const token = req.headers.authorization.replace(/^[Bb]earer /, "").trim();
     //extract user data from token 
     const user = jwt.decode(token)
-    if (!res.locals.user.isAdmin || user.username !==  res.locals.user.username) throw new UnauthorizedError();
+    if (!res.locals.user.isAdmin && user.username !==  res.locals.user.username) throw new UnauthorizedError();
     return next();
   } catch (err) {
     return next(err);
