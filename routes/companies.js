@@ -53,7 +53,7 @@ router.get("/", async function (req, res, next) {
   try {
     //if we have detected some filters - pass to filteredSearch
     if(Object.keys(req.query).length > 0) {
-      const companies = await Company.filteredSearch(req.query);
+      const companies = await Company.filteredSearch(req.query, 'company');
       return res.json({ companies });
     //if no filters present - return all companies
     } else {

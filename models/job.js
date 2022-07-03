@@ -2,7 +2,8 @@
 
 const db = require("../db");
 const { BadRequestError, NotFoundError } = require("../expressError");
-const { sqlForPartialUpdate, generateSearchQuery, filterSearchParams } = require("../helpers/sql");
+const { sqlForPartialUpdate, generateSearchQuery, filterSearchParams, generateJobSearchQuery } = require("../helpers/sql");
+const { search } = require("../routes/users");
 // Fix for parsing of numeric fields :: returns proper value for equity
 var types = require('pg').types
 types.setTypeParser(1700, 'text', parseFloat);
@@ -60,6 +61,7 @@ class Job {
    **/
 
   static async get(handle) {
+    console.log('runnin')
     const jobsRes = await db.query(
                       `SELECT id, 
                           title,
@@ -135,19 +137,26 @@ class Job {
    *  4. Range of # employees - both Min and Max
    **/
 
-  static async filteredSearch(data) {
+  static async filteredSearch(data, type) {
+    //type = type of filtered search : either company or job
     //first remove any bad search params if they exist
     //returns array of good filter names and values
+    console.log('running ****', data, type)
     let searchParams = filterSearchParams(data)
-    if(Object.keys(searchParams).length > 0) {
+    if(Object.keys(searchParams).length > 0 && type === 'company') {
       let query = generateSearchQuery(searchParams)
       if(query) {
         let result = await db.query(query)
         return result.rows;  
       }
-    } else {
-      throw new NotFoundError(`Insufficient search query parameters !`)
+    } else if(Object.keys(searchParams).length > 0 && type === 'job') {
+        let query = generateJobSearchQuery(searchParams)
+        if(query) {
+          let result = await db.query(query)
+          return result.rows;  
+        }
     }
+    throw new NotFoundError(`Insufficient search query parameters !`)
    
   }
 }

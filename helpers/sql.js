@@ -28,8 +28,6 @@ function sqlForPartialUpdate(dataToUpdate, jsToSql) {
 }
 
 function generateSearchQuery(data) {
-  //check to see if 'name' is present as it will change the structure of our query
-  console.log('going in with ', data)
   // we have 2 basic types of queries : (1) 'name' in query and (2) no 'name' in query
   //searchString will bee added into the base query using string interpolation for return (line 58) 
   let searchString
@@ -70,9 +68,43 @@ function generateSearchQuery(data) {
              ${searchString}`
 }
 
+function generateJobSearchQuery(data) {
+  console.log('in job')
+   // we have 2 basic types of queries : (1) 'title' in query and (2) no 'title' in query
+  //searchString will bee added into the base query using string interpolation for return (line 58) 
+  let searchString
+  //nameSearchString is prepended to the query if query has 'name' (type (1) query)
+  let nameSearchString
+  //clause will be WITH or AND depending upon if query has 'name' (type(1) query)
+  let clause
+  //figure out if we have (1) :: set up our query 'framework'
+  if('title' in data) {
+    nameSearchString = `WHERE title ILIKE '%${data.title}%'`
+    clause = 'AND'
+  } else {
+    nameSearchString = ''
+    clause = 'WHERE'
+  }
+  if(data.hasEquity && 'minSalary' in data) {
+    searchString = `${nameSearchString} ${clause} equity > 0 AND salary > ${data.minSalary}`
+  } else if (!data.hasEquity && 'minSalary' in data) {
+    searchString = `${nameSearchString} ${clause} salary > ${data.minSalary}`
+  } else if (data.hasEquity && !('minSalary' in data)){
+    searchString = `${nameSearchString} ${clause} equity > 0`
+  } else {
+    searchString = nameSearchString
+  }
+  return `SELECT title,
+                salary,
+                equity,
+                company_handle
+             FROM jobs 
+             ${searchString}`
+}
+
 function filterSearchParams(params) {
   //make sure our filter params are what we expect, remove any bad search params
-  let goodFilters = ['name', 'minEmployees', 'maxEmployees']
+  let goodFilters = ['name', 'minEmployees', 'maxEmployees', 'hasEquity', 'minSalary', 'title']
   let resultsObj = {}
   Object.entries(params).filter(el => {  
     if(goodFilters.indexOf(el[0]) !== -1) {
@@ -82,4 +114,4 @@ function filterSearchParams(params) {
   return resultsObj
 }
 
-module.exports = { sqlForPartialUpdate, generateSearchQuery, filterSearchParams };
+module.exports = { sqlForPartialUpdate, generateSearchQuery, filterSearchParams, generateJobSearchQuery };
