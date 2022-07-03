@@ -8,11 +8,6 @@
           "minLength": 1,
           "maxLength": 50
         },
-        "company_handle": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 10
-        },
         "salary": {
           "type": "integer",
           "minimum": 0
