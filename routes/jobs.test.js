@@ -20,7 +20,7 @@ beforeEach(commonBeforeEach);
 afterEach(commonAfterEach);
 afterAll(commonAfterAll);
 
-/************************************** POST /companies */
+/************************************** POST /jobs */
 
 describe("POST /jobs", function () {
   const newJob = {
@@ -51,7 +51,7 @@ describe("POST /jobs", function () {
 
   test("bad request with missing data", async function () {
     const resp = await request(app)
-        .post("/companies")
+        .post("/jobs")
         .send({
           title: "new",
           equity: .2,
@@ -133,7 +133,7 @@ describe("GET /jobs", function () {
   });
 });
 
-/************************************** GET /companies/:handle */
+/************************************** GET /jobs/:handle */
 
 describe("GET /jobs/:handle", function () {
   test("works for anon", async function () {
@@ -166,7 +166,7 @@ describe("GET /jobs/:handle", function () {
   });
 });
 
-// /************************************** PATCH /companies/:handle */
+// /************************************** PATCH /jobs/:job_id */
 
 describe("PATCH /jobs/:handle", function () {
   test("works for ADMIN users", async function () {
@@ -203,7 +203,7 @@ describe("PATCH /jobs/:handle", function () {
 
   test("unauth for anon", async function () {
     const resp = await request(app)
-        .patch(`/companies/c1`)
+        .patch(`/jobs/c1`)
         .send({
           name: "C1-new",
         });
@@ -212,12 +212,12 @@ describe("PATCH /jobs/:handle", function () {
 
   test("not found job", async function () {
     const resp = await request(app)
-        .patch(`/companies/9999999`)
+        .patch(`/jobs/9999999`)
         .send({
           title: "new nope",
         })
         .set("authorization", `Bearer ${u2Token}`);
-    expect(resp.statusCode).toEqual(400);
+    expect(resp.statusCode).toEqual(404);
   });
 
   test("bad request on invalid data", async function () {
@@ -256,7 +256,7 @@ describe("DELETE /jobs/:handle", function () {
     expect(resp.statusCode).toEqual(401);
   });
 
-  test("not found for no such company", async function () {
+  test("job not found", async function () {
     const resp = await request(app)
         .delete(`/jobs/nope`)
         .set("authorization", `Bearer ${u2Token}`);
