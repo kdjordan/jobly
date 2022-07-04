@@ -205,6 +205,7 @@ class User {
     if (!user) throw new NotFoundError(`No user: ${username}`);
 
   }
+//***** APPLICATION OPERATIONS */
   /** Allow user to apply for a job */
   static async apply(username, job_id) {
     let result = await db.query(`
@@ -218,6 +219,15 @@ class User {
     if (!job) throw new BadRequestError(`Troble applying for: ${job_id}`);
 
     return job
+  }
+
+  static async getJobsByUsername(username) {
+    let results = await db.query(
+      `SELECT job_id as jobId
+      from applications
+      WHERE username = $1`,
+      [username])
+      return results.rows
   }
 }
 

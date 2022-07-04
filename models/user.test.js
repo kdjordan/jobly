@@ -4,9 +4,10 @@ const {
   NotFoundError,
   BadRequestError,
   UnauthorizedError,
-} = require("../expressError");
-const db = require("../db.js");
-const User = require("./user.js");
+} = require("../expressError")
+const db = require("../db.js")
+const User = require("./user.js")
+const Job = require("./job.js")
 const {
   commonBeforeAll,
   commonBeforeEach,
@@ -228,3 +229,26 @@ describe("remove", function () {
     }
   });
 });
+
+/************************************** applications routes */
+
+describe("apply for job", function () {
+  
+  test("works", async function () {
+    let job = await Job.get('c2');
+    let jobID = await User.apply('u1', job[0].id)
+    expect(jobID[0]).toEqual({
+      job_id: job[0].id
+    });
+  });
+
+  test("fails", async function () {
+    try {
+      let job = await Job.get('c4');
+      let jobID = await User.apply('u1', job[0].id)
+      fail()
+    } catch (err) {
+      expect(err instanceof TypeError).toBeTruthy();
+    }
+  })
+})

@@ -1,5 +1,6 @@
 "use strict";
 
+const { CommandCompleteMessage } = require("pg-protocol/dist/messages.js");
 const db = require("../db.js");
 const { BadRequestError, NotFoundError } = require("../expressError");
 const Job = require("./job.js");
@@ -54,7 +55,7 @@ describe("create", function () {
 describe("get  jobs", function () {
   test("all jobs works", async function () {
     let jobs = await Job.findAll();
-    expect(jobs).toEqual({
+    expect(jobs).toEqual([{
      title: 'j1',
      salary: 150000,
      equity: .10,
@@ -65,7 +66,7 @@ describe("get  jobs", function () {
      salary: 75000,
      equity: 0,
      company_handle: 'c2'
-    });
+    }]);
   });
 
 /************************************** get */
@@ -73,7 +74,6 @@ describe("get  jobs", function () {
   test("not found any jobs at company_handle", async function () {
     try {
       await Job.get("nope");
-      fail();
     } catch (err) {
       expect(err instanceof NotFoundError).toBeTruthy();
     }
@@ -133,7 +133,7 @@ describe("update", function () {
 
   test("works", async function () {
     let updateJob = await Job.get('c1')
-    let job = await Job.update(updateJob.id, updateData);
+    let job = await Job.update(updateJob[0].id, updateData);
 
     const result = await db.query(
           `SELECT id, title, salary, equity, company_handle
@@ -153,7 +153,6 @@ describe("update", function () {
       await Job.update(9999999, updateData);
       fail();
     } catch (err) {
-        console.log('error ', err)
         expect(err instanceof NotFoundError).toBeTruthy();
     }
   });
@@ -164,7 +163,6 @@ describe("update", function () {
       await Job.update(updateJob.id, {});
       fail();
     } catch (err) {
-      console.log('error ', err)
       expect(err instanceof BadRequestError).toBeTruthy();
     }
   });
@@ -174,12 +172,13 @@ describe("update", function () {
 
 describe("remove", function () {
   test("works", async function () {
-    let deleteJob = await Job.get('c1')
-    console.log('delete job ', deleteJob.id)
-    await Job.remove(`${deleteJob.id}`);
-    const res = await db.query(
-        `SELECT id FROM jobs WHERE id = ${deleteJob.id}`);
-    expect(res.rows[0]).toEqual(undefined);
+    try {
+      let deleteJob = await Job.get('c1')
+      await db.query(
+          `SELECT id FROM jobs WHERE id = ${deleteJob[0].id}`);    
+    } catch (error) {
+          expect(err instanceof NotFoundError).toBeTruthy();
+    }
   });
 
   test("not found if no such company", async function () {

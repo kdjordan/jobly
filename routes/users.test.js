@@ -5,6 +5,7 @@ const request = require("supertest");
 const db = require("../db.js");
 const app = require("../app");
 const User = require("../models/user");
+const Job = require("../models/job");
 
 const {
   commonBeforeAll,
@@ -182,32 +183,44 @@ describe("GET /users", function () {
 
 describe("GET /users/:username", function () {
   test("works for admin users", async function () {
+    let job = await Job.get('c2');
+    await User.apply('u1', job[0].id)
+    const jobs = await User.getJobsByUsername('u1')
     const resp = await request(app)
         .get(`/users/u1`)
         .set("authorization", `Bearer ${u2Token}`);
+  
+    expect(resp.statusCode).toEqual(200);
     expect(resp.body).toEqual({
       user: {
         username: "u1",
         firstName: "U1F",
         lastName: "U1L",
         email: "user1@user.com",
-        isAdmin: false,
+        isAdmin: false
       },
+      jobs: jobs,
     });
   });
 
   test("works for user calling herself", async function () {
+    let job = await Job.get('c2');
+    await User.apply('u1', job[0].id)
+    const jobs = await User.getJobsByUsername('u1')
     const resp = await request(app)
         .get(`/users/u1`)
         .set("authorization", `Bearer ${u1Token}`);
+  
+    expect(resp.statusCode).toEqual(200);
     expect(resp.body).toEqual({
       user: {
         username: "u1",
         firstName: "U1F",
         lastName: "U1L",
         email: "user1@user.com",
-        isAdmin: false,
+        isAdmin: false
       },
+      jobs: jobs,
     });
   });
 
