@@ -8,6 +8,7 @@ const express = require("express");
 const { ensureLoggedIn, isAdmin, isAuthUser } = require("../middleware/auth");
 const { BadRequestError } = require("../expressError");
 const User = require("../models/user");
+const Job = require("../models/job");
 const { createToken } = require("../helpers/tokens");
 const userNewSchema = require("../schemas/userNew.json");
 const userUpdateSchema = require("../schemas/userUpdate.json");
@@ -38,6 +39,30 @@ router.post("/", [ensureLoggedIn, isAdmin], async function (req, res, next) {
     const user = await User.register(req.body);
     const token = createToken(user);
     return res.status(201).json({ user, token });
+  } catch (err) {
+    return next(err);
+  }
+});
+/** POST / { /users/:username/jobs/:id }  => { user, token }
+ *
+ * Allows user to apply for a job
+ *
+ * Authorization required: login or user is user
+ **/
+
+router.post("/:username/jobs/:id", isAuthUser, async function (req, res, next) {
+  try {
+    const {username, id} = req.params
+    //make sure out username exists
+    let user = await User.get(username)
+    let jobId = await Job.getById(id)
+
+    if(!user && !jobId.length > 0) {
+      throw new Error()
+    }
+    let resp = await User.apply(user.username, jobId[0].id)
+    return res.json({ applied: resp[0].job_id });
+    
   } catch (err) {
     return next(err);
   }

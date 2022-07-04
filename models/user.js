@@ -203,6 +203,21 @@ class User {
     const user = result.rows[0];
 
     if (!user) throw new NotFoundError(`No user: ${username}`);
+
+  }
+  /** Allow user to apply for a job */
+  static async apply(username, job_id) {
+    let result = await db.query(`
+      INSERT INTO applications (username, job_id)
+      VALUES ($1, $2)
+      RETURNING job_id`, 
+      [username, job_id]
+      )
+    const job = result.rows
+
+    if (!job) throw new BadRequestError(`Troble applying for: ${job_id}`);
+
+    return job
   }
 }
 

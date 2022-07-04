@@ -1,9 +1,9 @@
 "use strict";
 
 const db = require("../db");
-const { BadRequestError, NotFoundError } = require("../expressError");
+const {  NotFoundError } = require("../expressError");
 const { sqlForPartialUpdate, generateSearchQuery, filterSearchParams, generateJobSearchQuery } = require("../helpers/sql");
-const { search } = require("../routes/users");
+
 // Fix for parsing of numeric fields :: returns proper value for equity
 var types = require('pg').types
 types.setTypeParser(1700, 'text', parseFloat);
@@ -13,7 +13,7 @@ class Job {
   /** Create a job (from data), update db, return new job for a company.
    *
    * data should be { title, salary, equity, company_handle }
-   *
+   * 
    * Returns { title, salary, equity, company_handle }
    *
    * Throws BadRequestError if job with company already in database.
@@ -78,6 +78,29 @@ class Job {
 
     return jobs;
   }
+  /** Given a job ID return info about the job
+   *
+   * Returns { title, salary, equity, company_handle }
+   *   where jobs are from job id
+   *
+   **/
+
+  static async getById(id) {
+    const jobsRes = await db.query(
+                      `SELECT id, 
+                          title,
+                          salary,
+                          equity,
+                          company_handle
+                      FROM jobs
+                      WHERE id = $1`,
+                        [id]);
+    const jobs = jobsRes.rows;
+
+    if (!jobs) throw new NotFoundError(`No jobs at: ${id}`);
+
+    return jobs;
+  }
 
   /** Update job with `data`.
    *
@@ -120,7 +143,6 @@ class Job {
    **/
 
   static async remove(handle) {
-    console.log('removing ', handle)
     const result = await db.query(
           `DELETE
            FROM jobs
