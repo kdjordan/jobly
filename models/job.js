@@ -34,6 +34,8 @@ class Job {
     );
     const job = result.rows[0];
 
+    if (!job) throw new NotFoundError(`No job at: ${title}`);
+
     return job;
   }
 
@@ -43,13 +45,13 @@ class Job {
    * */
 
   static async findAll() {
-    const companiesRes = await db.query(
+    const jobsRes = await db.query(
           `SELECT title,
                   salary,
                   equity,
                   company_handle
            FROM jobs`);
-    return companiesRes.rows[0];
+    return jobsRes.rows;
   }
 
   /** Given a company handle, return jobs about company.
@@ -61,7 +63,6 @@ class Job {
    **/
 
   static async get(handle) {
-    console.log('runnin')
     const jobsRes = await db.query(
                       `SELECT id, 
                           title,
@@ -71,7 +72,7 @@ class Job {
                       FROM jobs
                       WHERE company_handle = $1`,
                         [handle]);
-    const jobs = jobsRes.rows[0];
+    const jobs = jobsRes.rows;
 
     if (!jobs) throw new NotFoundError(`No jobs at: ${handle}`);
 
@@ -105,11 +106,11 @@ class Job {
                                 company_handle`;                        
     const result = await db.query(querySql, [...values, id]);
   
-    const company = result.rows[0];
+    const job = result.rows[0];
 
-    if (!company) throw new NotFoundError(`No company: ${id}`);
+    if (!job) throw new NotFoundError(`No job: ${id}`);
 
-    return company;
+    return job;
     
   }
 
@@ -118,16 +119,17 @@ class Job {
    * Throws NotFoundError if company not found.
    **/
 
-  static async remove(id) {
-    console.log('removing ', id)
+  static async remove(handle) {
+    console.log('removing ', handle)
     const result = await db.query(
           `DELETE
            FROM jobs
-           WHERE id = $1`,
-        [id]);
-    const job = result.rows;
+           WHERE company_handle = $1
+           RETURNING company_handle`,
+        [handle]);
+    const job = result.rows[0];
 
-    if (!job) throw new NotFoundError(`No id: ${id}`);
+    if (!job) throw new NotFoundError(`No handle: ${handle}`);
   }
 
   /** Find companies based on one or more of the following criteria :
@@ -141,7 +143,6 @@ class Job {
     //type = type of filtered search : either company or job
     //first remove any bad search params if they exist
     //returns array of good filter names and values
-    console.log('running ****', data, type)
     let searchParams = filterSearchParams(data)
     if(Object.keys(searchParams).length > 0 && type === 'company') {
       let query = generateSearchQuery(searchParams)

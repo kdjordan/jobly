@@ -69,7 +69,6 @@ function generateSearchQuery(data) {
 }
 
 function generateJobSearchQuery(data) {
-  console.log('in job')
    // we have 2 basic types of queries : (1) 'title' in query and (2) no 'title' in query
   //searchString will bee added into the base query using string interpolation for return (line 58) 
   let searchString

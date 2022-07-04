@@ -11,7 +11,7 @@
       "company_handle": {
         "type": "string",
         "minLength": 1,
-        "maxLength": 10
+        "maxLength": 50
       },
       "salary": {
         "type": "integer",
