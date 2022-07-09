@@ -58,12 +58,8 @@ function isAdmin(req, res, next) {
 
 function isAuthUser(req, res, next) {
   try {
-    //get token from header
-    const token = req.headers.authorization.replace(/^[Bb]earer /, "").trim();
-    //extract user data from token 
-    const user = jwt.decode(token)
     //check is user is admin OR the user that is not admin is calling the endpoint
-    if (!res.locals.user.isAdmin && user.username !==  res.locals.user.username) throw new UnauthorizedError();
+    if (!res.locals.user.isAdmin && user.username !==  res.params.username) throw new UnauthorizedError();
     return next();
   } catch (err) {
     return next(err);

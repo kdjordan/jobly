@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1656954994415" clover="3.2.0">
-  <project timestamp="1656954994415" name="All files">
-    <metrics statements="461" coveredstatements="434" conditionals="142" coveredconditionals="114" methods="74" coveredmethods="71" elements="677" coveredelements="619" complexity="0" loc="461" ncloc="461" packages="5" files="16" classes="16"/>
+<coverage generated="1657385975215" clover="3.2.0">
+  <project timestamp="1657385975215" name="All files">
+    <metrics statements="461" coveredstatements="305" conditionals="142" coveredconditionals="80" methods="74" coveredmethods="43" elements="677" coveredelements="428" complexity="0" loc="461" ncloc="461" packages="5" files="16" classes="16"/>
     <package name="jobly">
-      <metrics statements="54" coveredstatements="52" conditionals="20" coveredconditionals="17" methods="8" coveredmethods="7"/>
-      <file name="app.js" path="/Users/macdev2/Desktop/jobly/app.js">
-        <metrics statements="26" coveredstatements="26" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <metrics statements="54" coveredstatements="52" conditionals="20" coveredconditionals="16" methods="8" coveredmethods="7"/>
+      <file name="app.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/app.js">
+        <metrics statements="26" coveredstatements="26" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="5" count="5" type="stmt"/>
         <line num="6" count="5" type="stmt"/>
         <line num="8" count="5" type="stmt"/>
@@ -27,13 +27,13 @@
         <line num="32" count="5" type="stmt"/>
         <line num="33" count="2" type="stmt"/>
         <line num="37" count="5" type="stmt"/>
-        <line num="38" count="46" type="cond" truecount="2" falsecount="0"/>
-        <line num="39" count="46" type="cond" truecount="2" falsecount="0"/>
-        <line num="40" count="46" type="stmt"/>
-        <line num="42" count="46" type="stmt"/>
+        <line num="38" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
         <line num="47" count="5" type="stmt"/>
       </file>
-      <file name="config.js" path="/Users/macdev2/Desktop/jobly/config.js">
+      <file name="config.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/config.js">
         <metrics statements="13" coveredstatements="13" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
         <line num="5" count="12" type="stmt"/>
         <line num="6" count="12" type="stmt"/>
@@ -49,7 +49,7 @@
         <line num="29" count="12" type="stmt"/>
         <line num="31" count="12" type="stmt"/>
       </file>
-      <file name="db.js" path="/Users/macdev2/Desktop/jobly/db.js">
+      <file name="db.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/db.js">
         <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
         <line num="3" count="9" type="stmt"/>
         <line num="4" count="9" type="stmt"/>
@@ -59,109 +59,109 @@
         <line num="21" count="9" type="stmt"/>
         <line num="23" count="9" type="stmt"/>
       </file>
-      <file name="expressError.js" path="/Users/macdev2/Desktop/jobly/expressError.js">
+      <file name="expressError.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/expressError.js">
         <metrics statements="8" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="5" coveredmethods="4"/>
-        <line num="9" count="60" type="stmt"/>
-        <line num="10" count="60" type="stmt"/>
-        <line num="11" count="60" type="stmt"/>
-        <line num="19" count="18" type="stmt"/>
-        <line num="27" count="21" type="stmt"/>
-        <line num="35" count="21" type="stmt"/>
+        <line num="9" count="21" type="stmt"/>
+        <line num="10" count="21" type="stmt"/>
+        <line num="11" count="21" type="stmt"/>
+        <line num="19" count="10" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="35" count="8" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="47" count="10" type="stmt"/>
       </file>
     </package>
     <package name="jobly.helpers">
-      <metrics statements="48" coveredstatements="44" conditionals="36" coveredconditionals="28" methods="7" coveredmethods="7"/>
-      <file name="sql.js" path="/Users/macdev2/Desktop/jobly/helpers/sql.js">
-        <metrics statements="42" coveredstatements="38" conditionals="34" coveredconditionals="26" methods="6" coveredmethods="6"/>
+      <metrics statements="48" coveredstatements="38" conditionals="36" coveredconditionals="22" methods="7" coveredmethods="7"/>
+      <file name="sql.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/helpers/sql.js">
+        <metrics statements="42" coveredstatements="32" conditionals="34" coveredconditionals="20" methods="6" coveredmethods="6"/>
         <line num="1" count="9" type="stmt"/>
         <line num="2" count="9" type="stmt"/>
-        <line num="15" count="21" type="stmt"/>
-        <line num="17" count="21" type="cond" truecount="2" falsecount="0"/>
-        <line num="20" count="17" type="stmt"/>
-        <line num="21" count="32" type="cond" truecount="2" falsecount="0"/>
-        <line num="24" count="17" type="stmt"/>
-        <line num="39" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="43" count="3" type="stmt"/>
-        <line num="44" count="3" type="stmt"/>
-        <line num="47" count="4" type="cond" truecount="4" falsecount="0"/>
-        <line num="49" count="1" type="cond" truecount="2" falsecount="2"/>
-        <line num="50" count="1" type="stmt"/>
+        <line num="15" count="13" type="stmt"/>
+        <line num="17" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="9" type="stmt"/>
+        <line num="21" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="9" type="stmt"/>
+        <line num="39" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="49" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="50" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
-        <line num="54" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="55" count="2" type="stmt"/>
-        <line num="57" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="54" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="57" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="58" count="0" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
-        <line num="62" count="3" type="stmt"/>
-        <line num="80" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="81" count="2" type="stmt"/>
-        <line num="82" count="2" type="stmt"/>
-        <line num="84" count="3" type="stmt"/>
-        <line num="85" count="3" type="stmt"/>
-        <line num="87" count="5" type="cond" truecount="2" falsecount="2"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="80" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="87" count="2" type="cond" truecount="2" falsecount="2"/>
         <line num="88" count="0" type="stmt"/>
-        <line num="89" count="5" type="cond" truecount="4" falsecount="0"/>
-        <line num="90" count="3" type="stmt"/>
-        <line num="91" count="2" type="cond" truecount="2" falsecount="2"/>
+        <line num="89" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="91" count="1" type="cond" truecount="2" falsecount="2"/>
         <line num="92" count="0" type="stmt"/>
-        <line num="94" count="2" type="stmt"/>
-        <line num="96" count="5" type="stmt"/>
-        <line num="106" count="9" type="stmt"/>
-        <line num="107" count="9" type="stmt"/>
-        <line num="108" count="9" type="stmt"/>
-        <line num="109" count="10" type="cond" truecount="1" falsecount="1"/>
-        <line num="110" count="10" type="stmt"/>
-        <line num="113" count="9" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="96" count="2" type="stmt"/>
+        <line num="106" count="3" type="stmt"/>
+        <line num="107" count="3" type="stmt"/>
+        <line num="108" count="3" type="stmt"/>
+        <line num="109" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="110" count="3" type="stmt"/>
+        <line num="113" count="3" type="stmt"/>
         <line num="116" count="9" type="stmt"/>
       </file>
-      <file name="tokens.js" path="/Users/macdev2/Desktop/jobly/helpers/tokens.js">
+      <file name="tokens.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/helpers/tokens.js">
         <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="7" type="stmt"/>
         <line num="2" count="7" type="stmt"/>
-        <line num="7" count="17" type="stmt"/>
-        <line num="10" count="17" type="stmt"/>
-        <line num="15" count="17" type="stmt"/>
+        <line num="7" count="13" type="stmt"/>
+        <line num="10" count="13" type="stmt"/>
+        <line num="15" count="13" type="stmt"/>
         <line num="18" count="7" type="stmt"/>
       </file>
     </package>
     <package name="jobly.middleware">
-      <metrics statements="25" coveredstatements="24" conditionals="12" coveredconditionals="11" methods="4" coveredmethods="4"/>
-      <file name="auth.js" path="/Users/macdev2/Desktop/jobly/middleware/auth.js">
-        <metrics statements="25" coveredstatements="24" conditionals="12" coveredconditionals="11" methods="4" coveredmethods="4"/>
+      <metrics statements="25" coveredstatements="15" conditionals="12" coveredconditionals="6" methods="4" coveredmethods="2"/>
+      <file name="auth.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/middleware/auth.js">
+        <metrics statements="25" coveredstatements="15" conditionals="12" coveredconditionals="6" methods="4" coveredmethods="2"/>
         <line num="5" count="6" type="stmt"/>
         <line num="6" count="6" type="stmt"/>
         <line num="7" count="6" type="stmt"/>
-        <line num="19" count="82" type="stmt"/>
-        <line num="20" count="82" type="cond" truecount="2" falsecount="0"/>
-        <line num="21" count="82" type="cond" truecount="2" falsecount="0"/>
-        <line num="22" count="44" type="stmt"/>
-        <line num="23" count="44" type="stmt"/>
-        <line num="25" count="81" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="20" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
-        <line num="37" count="52" type="stmt"/>
-        <line num="38" count="52" type="cond" truecount="2" falsecount="0"/>
-        <line num="39" count="42" type="stmt"/>
-        <line num="41" count="10" type="stmt"/>
-        <line num="51" count="30" type="stmt"/>
-        <line num="52" count="30" type="cond" truecount="2" falsecount="0"/>
-        <line num="53" count="23" type="stmt"/>
-        <line num="55" count="7" type="stmt"/>
-        <line num="60" count="11" type="stmt"/>
-        <line num="62" count="11" type="stmt"/>
-        <line num="64" count="11" type="stmt"/>
-        <line num="66" count="11" type="cond" truecount="3" falsecount="1"/>
-        <line num="67" count="11" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="66" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="67" count="0" type="stmt"/>
         <line num="69" count="0" type="stmt"/>
         <line num="74" count="6" type="stmt"/>
       </file>
     </package>
     <package name="jobly.models">
-      <metrics statements="133" coveredstatements="123" conditionals="50" coveredconditionals="38" methods="25" coveredmethods="24"/>
-      <file name="_testCommon.js" path="/Users/macdev2/Desktop/jobly/models/_testCommon.js">
+      <metrics statements="133" coveredstatements="121" conditionals="50" coveredconditionals="36" methods="25" coveredmethods="23"/>
+      <file name="_testCommon.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/models/_testCommon.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <line num="1" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
@@ -176,140 +176,140 @@
         <line num="48" count="3" type="stmt"/>
         <line num="52" count="3" type="stmt"/>
       </file>
-      <file name="company.js" path="/Users/macdev2/Desktop/jobly/models/company.js">
+      <file name="company.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/models/company.js">
         <metrics statements="33" coveredstatements="32" conditionals="12" coveredconditionals="10" methods="6" coveredmethods="6"/>
         <line num="3" count="7" type="stmt"/>
         <line num="4" count="7" type="stmt"/>
         <line num="5" count="7" type="stmt"/>
-        <line num="20" count="19" type="stmt"/>
-        <line num="26" count="19" type="cond" truecount="2" falsecount="0"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="29" count="18" type="stmt"/>
-        <line num="42" count="18" type="stmt"/>
-        <line num="44" count="18" type="stmt"/>
-        <line num="53" count="3" type="stmt"/>
-        <line num="61" count="2" type="stmt"/>
-        <line num="73" count="5" type="stmt"/>
-        <line num="83" count="5" type="stmt"/>
-        <line num="85" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="87" count="3" type="stmt"/>
-        <line num="103" count="6" type="stmt"/>
-        <line num="109" count="5" type="stmt"/>
-        <line num="111" count="5" type="stmt"/>
-        <line num="119" count="5" type="stmt"/>
-        <line num="120" count="5" type="stmt"/>
-        <line num="122" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="124" count="3" type="stmt"/>
-        <line num="133" count="4" type="stmt"/>
-        <line num="139" count="4" type="stmt"/>
-        <line num="141" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="154" count="4" type="stmt"/>
-        <line num="155" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="156" count="4" type="stmt"/>
-        <line num="157" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="158" count="3" type="stmt"/>
-        <line num="159" count="3" type="stmt"/>
+        <line num="20" count="16" type="stmt"/>
+        <line num="26" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="29" count="13" type="stmt"/>
+        <line num="42" count="12" type="stmt"/>
+        <line num="44" count="12" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="73" count="2" type="stmt"/>
+        <line num="83" count="2" type="stmt"/>
+        <line num="85" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="103" count="4" type="stmt"/>
+        <line num="109" count="3" type="stmt"/>
+        <line num="111" count="3" type="stmt"/>
+        <line num="119" count="3" type="stmt"/>
+        <line num="120" count="3" type="stmt"/>
+        <line num="122" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="124" count="2" type="stmt"/>
+        <line num="133" count="2" type="stmt"/>
+        <line num="139" count="2" type="stmt"/>
+        <line num="141" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="154" count="1" type="stmt"/>
+        <line num="155" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="156" count="1" type="stmt"/>
+        <line num="157" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="158" count="1" type="stmt"/>
+        <line num="159" count="1" type="stmt"/>
         <line num="162" count="0" type="stmt"/>
         <line num="169" count="7" type="stmt"/>
       </file>
-      <file name="job.js" path="/Users/macdev2/Desktop/jobly/models/job.js">
-        <metrics statements="42" coveredstatements="33" conditionals="22" coveredconditionals="13" methods="7" coveredmethods="6"/>
+      <file name="job.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/models/job.js">
+        <metrics statements="42" coveredstatements="33" conditionals="22" coveredconditionals="12" methods="7" coveredmethods="6"/>
         <line num="3" count="8" type="stmt"/>
         <line num="4" count="8" type="stmt"/>
         <line num="5" count="8" type="stmt"/>
         <line num="8" count="8" type="stmt"/>
         <line num="9" count="8" type="stmt"/>
-        <line num="23" count="17" type="stmt"/>
-        <line num="35" count="17" type="stmt"/>
-        <line num="37" count="17" type="cond" truecount="1" falsecount="1"/>
-        <line num="39" count="17" type="stmt"/>
-        <line num="48" count="2" type="stmt"/>
-        <line num="54" count="2" type="stmt"/>
-        <line num="66" count="17" type="stmt"/>
-        <line num="75" count="17" type="stmt"/>
-        <line num="77" count="17" type="cond" truecount="1" falsecount="1"/>
-        <line num="79" count="17" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="37" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="39" count="4" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="66" count="6" type="stmt"/>
+        <line num="75" count="6" type="stmt"/>
+        <line num="77" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="79" count="6" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
         <line num="98" count="0" type="stmt"/>
         <line num="100" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="102" count="0" type="stmt"/>
-        <line num="118" count="5" type="stmt"/>
-        <line num="120" count="4" type="stmt"/>
-        <line num="122" count="4" type="stmt"/>
-        <line num="130" count="4" type="stmt"/>
-        <line num="132" count="4" type="stmt"/>
-        <line num="134" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="136" count="2" type="stmt"/>
-        <line num="146" count="3" type="stmt"/>
-        <line num="152" count="3" type="stmt"/>
-        <line num="154" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="168" count="5" type="stmt"/>
-        <line num="169" count="5" type="cond" truecount="3" falsecount="1"/>
+        <line num="118" count="3" type="stmt"/>
+        <line num="120" count="2" type="stmt"/>
+        <line num="122" count="2" type="stmt"/>
+        <line num="130" count="2" type="stmt"/>
+        <line num="132" count="2" type="stmt"/>
+        <line num="134" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="136" count="1" type="stmt"/>
+        <line num="146" count="1" type="stmt"/>
+        <line num="152" count="1" type="stmt"/>
+        <line num="154" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="168" count="2" type="stmt"/>
+        <line num="169" count="2" type="cond" truecount="3" falsecount="1"/>
         <line num="170" count="0" type="stmt"/>
         <line num="171" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="172" count="0" type="stmt"/>
         <line num="173" count="0" type="stmt"/>
-        <line num="175" count="5" type="cond" truecount="3" falsecount="1"/>
-        <line num="176" count="5" type="stmt"/>
-        <line num="177" count="5" type="cond" truecount="1" falsecount="1"/>
-        <line num="178" count="5" type="stmt"/>
-        <line num="179" count="4" type="stmt"/>
+        <line num="175" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="176" count="2" type="stmt"/>
+        <line num="177" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="178" count="2" type="stmt"/>
+        <line num="179" count="2" type="stmt"/>
         <line num="182" count="0" type="stmt"/>
         <line num="188" count="8" type="stmt"/>
       </file>
-      <file name="user.js" path="/Users/macdev2/Desktop/jobly/models/user.js">
-        <metrics statements="46" coveredstatements="46" conditionals="16" coveredconditionals="15" methods="8" coveredmethods="8"/>
+      <file name="user.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/models/user.js">
+        <metrics statements="46" coveredstatements="44" conditionals="16" coveredconditionals="14" methods="8" coveredmethods="7"/>
         <line num="3" count="7" type="stmt"/>
         <line num="4" count="7" type="stmt"/>
         <line num="5" count="7" type="stmt"/>
         <line num="10" count="7" type="stmt"/>
         <line num="12" count="7" type="stmt"/>
-        <line num="26" count="7" type="stmt"/>
-        <line num="38" count="7" type="stmt"/>
-        <line num="40" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="42" count="4" type="stmt"/>
-        <line num="43" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="44" count="3" type="stmt"/>
-        <line num="45" count="3" type="stmt"/>
-        <line num="49" count="4" type="stmt"/>
-        <line num="61" count="22" type="stmt"/>
-        <line num="68" count="22" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="40" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="61" count="7" type="stmt"/>
+        <line num="68" count="7" type="cond" truecount="2" falsecount="0"/>
         <line num="69" count="1" type="stmt"/>
-        <line num="72" count="21" type="stmt"/>
-        <line num="74" count="21" type="stmt"/>
-        <line num="94" count="21" type="stmt"/>
-        <line num="96" count="21" type="stmt"/>
-        <line num="105" count="3" type="stmt"/>
-        <line num="115" count="2" type="stmt"/>
-        <line num="127" count="5" type="stmt"/>
-        <line num="138" count="5" type="stmt"/>
-        <line num="140" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="142" count="3" type="stmt"/>
-        <line num="163" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="164" count="2" type="stmt"/>
-        <line num="167" count="8" type="stmt"/>
-        <line num="174" count="7" type="stmt"/>
-        <line num="176" count="7" type="stmt"/>
-        <line num="184" count="7" type="stmt"/>
-        <line num="185" count="7" type="stmt"/>
-        <line num="187" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="189" count="5" type="stmt"/>
-        <line num="190" count="5" type="stmt"/>
-        <line num="196" count="5" type="stmt"/>
-        <line num="203" count="5" type="stmt"/>
-        <line num="205" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="211" count="3" type="stmt"/>
-        <line num="217" count="3" type="stmt"/>
-        <line num="219" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="221" count="3" type="stmt"/>
-        <line num="225" count="4" type="stmt"/>
-        <line num="230" count="4" type="stmt"/>
+        <line num="72" count="6" type="stmt"/>
+        <line num="74" count="6" type="stmt"/>
+        <line num="94" count="6" type="stmt"/>
+        <line num="96" count="6" type="stmt"/>
+        <line num="105" count="1" type="stmt"/>
+        <line num="115" count="1" type="stmt"/>
+        <line num="127" count="2" type="stmt"/>
+        <line num="138" count="2" type="stmt"/>
+        <line num="140" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="142" count="1" type="stmt"/>
+        <line num="163" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="164" count="1" type="stmt"/>
+        <line num="167" count="4" type="stmt"/>
+        <line num="174" count="3" type="stmt"/>
+        <line num="176" count="3" type="stmt"/>
+        <line num="184" count="3" type="stmt"/>
+        <line num="185" count="3" type="stmt"/>
+        <line num="187" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="189" count="2" type="stmt"/>
+        <line num="190" count="2" type="stmt"/>
+        <line num="196" count="2" type="stmt"/>
+        <line num="203" count="2" type="stmt"/>
+        <line num="205" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="211" count="1" type="stmt"/>
+        <line num="217" count="1" type="stmt"/>
+        <line num="219" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="221" count="1" type="stmt"/>
+        <line num="225" count="0" type="stmt"/>
+        <line num="230" count="0" type="stmt"/>
         <line num="235" count="7" type="stmt"/>
       </file>
     </package>
     <package name="jobly.routes">
-      <metrics statements="201" coveredstatements="191" conditionals="24" coveredconditionals="20" methods="30" coveredmethods="29"/>
-      <file name="_testCommon.js" path="/Users/macdev2/Desktop/jobly/routes/_testCommon.js">
+      <metrics statements="201" coveredstatements="79" conditionals="24" coveredconditionals="0" methods="30" coveredmethods="4"/>
+      <file name="_testCommon.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/routes/_testCommon.js">
         <metrics statements="22" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <line num="3" count="5" type="stmt"/>
         <line num="4" count="5" type="stmt"/>
@@ -319,23 +319,23 @@
         <line num="11" count="5" type="stmt"/>
         <line num="13" count="5" type="stmt"/>
         <line num="15" count="5" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
-        <line num="31" count="5" type="stmt"/>
-        <line num="40" count="5" type="stmt"/>
-        <line num="47" count="5" type="stmt"/>
-        <line num="54" count="5" type="stmt"/>
-        <line num="62" count="5" type="stmt"/>
-        <line num="70" count="5" type="stmt"/>
-        <line num="78" count="5" type="stmt"/>
-        <line num="89" count="74" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="89" count="2" type="stmt"/>
         <line num="93" count="74" type="stmt"/>
         <line num="97" count="5" type="stmt"/>
         <line num="101" count="5" type="stmt"/>
         <line num="102" count="5" type="stmt"/>
         <line num="106" count="5" type="stmt"/>
       </file>
-      <file name="auth.js" path="/Users/macdev2/Desktop/jobly/routes/auth.js">
-        <metrics statements="30" coveredstatements="30" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+      <file name="auth.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/routes/auth.js">
+        <metrics statements="30" coveredstatements="11" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="5" count="5" type="stmt"/>
         <line num="7" count="5" type="stmt"/>
         <line num="8" count="5" type="stmt"/>
@@ -345,30 +345,30 @@
         <line num="12" count="5" type="stmt"/>
         <line num="13" count="5" type="stmt"/>
         <line num="22" count="5" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
-        <line num="24" count="5" type="stmt"/>
-        <line num="25" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="26" count="2" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="30" count="3" type="stmt"/>
-        <line num="31" count="3" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="35" count="4" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
         <line num="49" count="5" type="stmt"/>
-        <line num="50" count="3" type="stmt"/>
-        <line num="51" count="3" type="stmt"/>
-        <line num="52" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="53" count="5" type="stmt"/>
-        <line num="54" count="2" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
-        <line num="59" count="1" type="stmt"/>
-        <line num="61" count="2" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
         <line num="66" count="5" type="stmt"/>
       </file>
-      <file name="companies.js" path="/Users/macdev2/Desktop/jobly/routes/companies.js">
-        <metrics statements="47" coveredstatements="47" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="7"/>
+      <file name="companies.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/routes/companies.js">
+        <metrics statements="47" coveredstatements="15" conditionals="6" coveredconditionals="0" methods="7" coveredmethods="0"/>
         <line num="5" count="5" type="stmt"/>
         <line num="6" count="5" type="stmt"/>
         <line num="8" count="5" type="stmt"/>
@@ -379,46 +379,46 @@
         <line num="14" count="5" type="stmt"/>
         <line num="16" count="5" type="stmt"/>
         <line num="28" count="5" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
-        <line num="30" count="3" type="stmt"/>
-        <line num="31" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="32" count="3" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
         <line num="53" count="5" type="stmt"/>
-        <line num="54" count="5" type="stmt"/>
-        <line num="56" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="57" count="3" type="stmt"/>
-        <line num="58" count="2" type="stmt"/>
-        <line num="61" count="2" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
-        <line num="65" count="2" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
         <line num="77" count="5" type="stmt"/>
-        <line num="78" count="3" type="stmt"/>
-        <line num="79" count="3" type="stmt"/>
-        <line num="80" count="2" type="stmt"/>
-        <line num="82" count="2" type="stmt"/>
-        <line num="84" count="1" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
         <line num="99" count="5" type="stmt"/>
-        <line num="100" count="4" type="stmt"/>
-        <line num="101" count="4" type="stmt"/>
-        <line num="102" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="103" count="2" type="stmt"/>
-        <line num="104" count="2" type="stmt"/>
-        <line num="107" count="2" type="stmt"/>
-        <line num="108" count="1" type="stmt"/>
-        <line num="110" count="3" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
+        <line num="102" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="104" count="0" type="stmt"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="110" count="0" type="stmt"/>
         <line num="119" count="5" type="stmt"/>
-        <line num="120" count="2" type="stmt"/>
-        <line num="121" count="2" type="stmt"/>
-        <line num="122" count="1" type="stmt"/>
-        <line num="124" count="1" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="122" count="0" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
         <line num="129" count="5" type="stmt"/>
       </file>
-      <file name="jobs.js" path="/Users/macdev2/Desktop/jobly/routes/jobs.js">
-        <metrics statements="46" coveredstatements="45" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="7"/>
+      <file name="jobs.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/routes/jobs.js">
+        <metrics statements="46" coveredstatements="14" conditionals="6" coveredconditionals="0" methods="7" coveredmethods="0"/>
         <line num="5" count="5" type="stmt"/>
         <line num="6" count="5" type="stmt"/>
         <line num="8" count="5" type="stmt"/>
@@ -428,46 +428,46 @@
         <line num="13" count="5" type="stmt"/>
         <line num="15" count="5" type="stmt"/>
         <line num="27" count="5" type="stmt"/>
-        <line num="28" count="3" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
-        <line num="30" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="37" count="2" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
         <line num="53" count="5" type="stmt"/>
-        <line num="54" count="4" type="stmt"/>
-        <line num="56" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="57" count="3" type="stmt"/>
-        <line num="58" count="2" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
-        <line num="65" count="1" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
         <line num="77" count="5" type="stmt"/>
-        <line num="78" count="7" type="stmt"/>
-        <line num="79" count="7" type="stmt"/>
-        <line num="80" count="7" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
         <line num="82" count="0" type="stmt"/>
         <line num="97" count="5" type="stmt"/>
-        <line num="98" count="3" type="stmt"/>
-        <line num="99" count="3" type="stmt"/>
-        <line num="100" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="101" count="1" type="stmt"/>
-        <line num="102" count="1" type="stmt"/>
-        <line num="105" count="2" type="stmt"/>
-        <line num="106" count="1" type="stmt"/>
-        <line num="108" count="2" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="100" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="101" count="0" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="106" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
         <line num="117" count="5" type="stmt"/>
-        <line num="118" count="2" type="stmt"/>
-        <line num="119" count="2" type="stmt"/>
-        <line num="120" count="1" type="stmt"/>
-        <line num="122" count="1" type="stmt"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="119" count="0" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="122" count="0" type="stmt"/>
         <line num="127" count="5" type="stmt"/>
       </file>
-      <file name="users.js" path="/Users/macdev2/Desktop/jobly/routes/users.js">
-        <metrics statements="56" coveredstatements="47" conditionals="8" coveredconditionals="4" methods="8" coveredmethods="7"/>
+      <file name="users.js" path="/Users/macdev2/Desktop/SPRINGBEE/jobly/routes/users.js">
+        <metrics statements="56" coveredstatements="17" conditionals="8" coveredconditionals="0" methods="8" coveredmethods="0"/>
         <line num="5" count="5" type="stmt"/>
         <line num="7" count="5" type="stmt"/>
         <line num="8" count="5" type="stmt"/>
@@ -479,15 +479,15 @@
         <line num="14" count="5" type="stmt"/>
         <line num="16" count="5" type="stmt"/>
         <line num="31" count="5" type="stmt"/>
-        <line num="32" count="4" type="stmt"/>
-        <line num="33" count="4" type="stmt"/>
-        <line num="34" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="35" count="5" type="stmt"/>
-        <line num="36" count="2" type="stmt"/>
-        <line num="39" count="2" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
         <line num="53" count="5" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
@@ -499,30 +499,30 @@
         <line num="64" count="0" type="stmt"/>
         <line num="67" count="0" type="stmt"/>
         <line num="79" count="5" type="stmt"/>
-        <line num="80" count="2" type="stmt"/>
-        <line num="81" count="2" type="stmt"/>
-        <line num="82" count="1" type="stmt"/>
-        <line num="84" count="1" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
         <line num="96" count="5" type="stmt"/>
-        <line num="97" count="3" type="stmt"/>
-        <line num="98" count="3" type="stmt"/>
-        <line num="99" count="2" type="stmt"/>
-        <line num="100" count="2" type="stmt"/>
-        <line num="102" count="1" type="stmt"/>
+        <line num="97" count="0" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
         <line num="117" count="5" type="stmt"/>
-        <line num="118" count="5" type="stmt"/>
-        <line num="119" count="5" type="stmt"/>
-        <line num="120" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="121" count="1" type="stmt"/>
-        <line num="122" count="1" type="stmt"/>
-        <line num="125" count="4" type="stmt"/>
-        <line num="126" count="3" type="stmt"/>
-        <line num="128" count="2" type="stmt"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="119" count="0" type="stmt"/>
+        <line num="120" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="122" count="0" type="stmt"/>
+        <line num="125" count="0" type="stmt"/>
+        <line num="126" count="0" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
         <line num="138" count="5" type="stmt"/>
-        <line num="139" count="3" type="stmt"/>
-        <line num="140" count="3" type="stmt"/>
-        <line num="141" count="2" type="stmt"/>
-        <line num="143" count="1" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="140" count="0" type="stmt"/>
+        <line num="141" count="0" type="stmt"/>
+        <line num="143" count="0" type="stmt"/>
         <line num="148" count="5" type="stmt"/>
       </file>
     </package>
